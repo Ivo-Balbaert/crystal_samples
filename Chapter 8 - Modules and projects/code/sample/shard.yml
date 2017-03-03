@@ -1,0 +1,20 @@
+name: sample
+version: 0.1.0
+
+authors:
+  - Ivo-Balbaert <ivo.balbaert@telenet.be>
+
+targets:
+  sample:
+    main: src/sample.cr
+
+crystal: 0.20.3
+
+license: MIT
+
+dependencies:
+  kemal:
+    github: sdogruyol/kemal
+    version: 0.17.4
+
+

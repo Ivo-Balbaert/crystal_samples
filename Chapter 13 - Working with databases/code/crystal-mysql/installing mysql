@@ -1,0 +1,8 @@
+he short version of the installation is simple: update your package index, install the mysql-server package, and then run the included security script.
+
+    sudo apt-get update
+    sudo apt-get install mysql-server
+    sudo mysql_secure_installation
+
+Install SQL Workbench
+

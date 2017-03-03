@@ -1,0 +1,13 @@
+name: unicorn
+version: 0.1.0
+
+authors:
+  - Ivo-Balbaert <ivo.balbaert@telenet.be>
+
+targets:
+  unicorn:
+    main: src/unicorn.cr
+
+crystal: 0.21.0
+
+license: MIT

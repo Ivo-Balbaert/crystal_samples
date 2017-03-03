@@ -1,0 +1,13 @@
+name: fizzbuzz
+version: 0.1.0
+
+authors:
+  - Ivo-Balbaert <ivo.balbaert@telenet.be>
+
+targets:
+  fizzbuzz:
+    main: src/fizzbuzz.cr
+
+crystal: 0.20.5
+
+license: MIT

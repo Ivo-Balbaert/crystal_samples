@@ -1,0 +1,17 @@
+name: crsqlite3
+version: 0.1.0
+
+authors:
+  - Ivo-Balbaert <ivo.balbaert@telenet.be>
+
+targets:
+  crsqlite3:
+    main: src/crsqlite3.cr
+
+crystal: 0.21.0
+
+license: MIT
+
+dependencies:
+  sqlite3:
+    github: crystal-lang/crystal-sqlite3
