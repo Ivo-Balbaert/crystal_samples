@@ -123,9 +123,9 @@ end
 # pet : Animal+
 # john.pet.talk # Error: undefined method 'talk' for Animal
 # to solve this:
-abstract class Animal
+abstract class Animal    # this is enough to solve the error
   # Makes this animal talk
-  abstract def talk
+  abstract def talk      #then every subclass must implement talk!
 end
 
 john.pet.talk #=> "Woof!"
@@ -142,4 +142,13 @@ end
 # Prints "Bye bye ...!" for ever
 loop do
   Foo.new
+end
+
+# Generic classes
+# Define a new generic class that subclass another one
+class MyArray(T) < Array(T)
+end
+
+# Define a non-generic class that subclass an instance of a generic another one
+class MyInt32Array < Array(Int32)
 end

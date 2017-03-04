@@ -268,3 +268,9 @@ def some_method
     # always execute this
   end
 end
+
+# Chaining methods
+p (1..5).to_a
+        .sort { |a,b| a<=>b }
+        .reject { |a| a.even? }
+# [1, 3, 5]

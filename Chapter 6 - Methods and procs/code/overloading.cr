@@ -1,4 +1,20 @@
 # example 1
+def double(i)
+  i * 2
+end
+
+# 3 different methods are compiled
+p answer = double(3)  # => 6
+puts typeof(answer)   # => Int32
+
+p answer2 = double(3.14)    # => 6.28
+puts typeof(answer2)        # => Float64
+
+p answer3 = double("hi")    # => "hihi"
+puts typeof(answer3)        # => String    
+
+
+# example 2
 def add(x, y)   
   x + y
 end
@@ -21,7 +37,7 @@ end
 
 p add 3, "Crystal"  # => "3Crystal"
 
-# example 2
+# example 3
 # foo 1
 def foo(x, y)
   x + y
@@ -46,3 +62,25 @@ foo 1, 1      # Invokes foo 1
 foo 1         # Invokes foo 2
 foo 1.5       # Invokes foo 3
 foo(1) { puts "yield" }    # Invokes foo 4
+
+# example 4
+def foo(a : Int, b : Char)
+  1
+end
+
+def foo(a : Bool, b : Char)
+  2
+end
+
+def foo(a, b : Char)
+  3
+end
+
+def foo(a, b)
+  4
+end
+
+foo 3, 'c'      # => 1
+foo true, 'c'   # => 2
+foo :hi, 'c'    # => 3
+foo :hi, :c     # => 4 

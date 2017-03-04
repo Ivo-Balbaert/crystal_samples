@@ -21,9 +21,10 @@ p a || b # => "London"
 
 result = value.as?(Int32) || 10  # if value is not an Int32, result is 10
 
-
 # shortcut syntax:
+# if local is false or nil, it is set to 1, otherwise it stays the same
 local ||= 1 # same as: local || (local = 1)
+# if local is true, it is set to 1
 local &&= 1 # same as: local && (local = 1)
 
 

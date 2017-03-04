@@ -11,9 +11,23 @@ end
 # a # : Int32 | String
 
 # compile-time type:
-p typeof(a) # Int32 | String
+p typeof(a) # (Int32 | String)
 # run-time type:
 p a.class     # Int32
+
+p a * 2  # => 64  (* is defined for both Int32 or String)
+p a + 2  # => Error: no overload matches 'String#+'' with type Int32
+
+if 1 + 2 == 3
+  a = 42
+end
+p typeof(a)     # => (Int32 | Nil)
+p a.class     # => Int32
+p a    # => 42
+
+p a + 2 # => Error: undefined method '+' for Nil
+p a * 2 # => Error: undefined method '*' for Nil
+p a.not_nil! + 2  # => 44
 
 # set the compile-time type
 a = 0.as(Int32|Nil|String)
