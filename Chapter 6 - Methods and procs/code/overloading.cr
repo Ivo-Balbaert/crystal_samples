@@ -83,4 +83,27 @@ end
 foo 3, 'c'      # => 1
 foo true, 'c'   # => 2
 foo :hi, 'c'    # => 3
-foo :hi, :c     # => 4 
+foo :hi, :c     # => 4
+
+# example 5
+class Increment
+  getter :amount
+
+  def initialize
+    @amount = 0
+  end
+
+  def increment
+    @amount += 1
+  end
+
+  def increment(inc_amount)
+    @amount += inc_amount
+  end
+end
+
+inc = Increment.new
+inc.increment
+p inc.amount   # => 1
+inc.increment(5)
+p inc.amount   # => 6

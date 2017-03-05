@@ -21,9 +21,11 @@ end
 
 int_box = MyBox(Int32).new(1)
 int_box.value # => 1 (Int32)
+int_box = MyBox.new(42)
 
 string_box = MyBox(String).new("hello")
 string_box.value # => "hello" (String)
+string_box = MyBox.new("crystal")
 
 another_box = MyBox(String).new(1) # Error, Int32 doesn't match String
 
