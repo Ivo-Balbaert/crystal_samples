@@ -8,6 +8,14 @@ languages = ["English", "Norwegian", "Ruby"]
 [] of Int32      #=> [] : Array(Int32)
 Array(Int32).new #=> [] : Array(Int32)
 
+# Add to an array
+array << 6  #=> [1, 2, 3, 4, 5, 6]
+
+# Initialize an array with 6 elements equal to 0
+b = Array(Int32).new(6, 0)
+b[3] = 100
+puts b # => [0, 0, 0, 100, 0, 0]
+
 # Array of String: Array(String)
 p %w(one two three) # => ["one", "two", "three"]
 
@@ -32,9 +40,6 @@ p array[1..3] #=> [2, 3, 4]
 p languages.size       # 3
 p languages.to_s       # "[\"English\", \"Norwegian\", \"Ruby\"]"
 p languages.join(" ,") # "English ,Norwegian ,Ruby"
-
-# Add to an array
-array << 6  #=> [1, 2, 3, 4, 5, 6]
 
 # Remove from the end of the array
 array.pop #=> 6

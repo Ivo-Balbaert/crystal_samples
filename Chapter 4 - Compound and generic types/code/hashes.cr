@@ -7,11 +7,25 @@
 {} of Int32 => Int32   # {} 
 Hash(Int32, Int32).new # {}
 
+a = {} of String => Int32
+a["gs"] = 1905
+puts a # => {"gs" => 1905}
+
+b = Hash(Int32 | Char, Int32){3 => 4}
+b[1] = 2
+b['a'] = 9
+puts b  # => {3 => 4, 1 => 2, 'a' => 9}
+
+p b.size   # => 3
+
+b.delete('a')
+puts b # => {3 => 4, 1 => 2}
+
 # Look up value by key
 hash = {"color" => "green", "number" => 5}
 p hash["color"]        #=> "green"
-p hash["no_such_key"]  #=> Missing hash key: "no_such_key" (KeyError)
-p hash["no_such_key"]? #=> nil
+p hash["letter"]  #=> Missing hash key: "letter" (KeyError)
+p hash["letter"]? #=> nil
 
 # Check existence of key
 hash.has_key? "color" #=> true

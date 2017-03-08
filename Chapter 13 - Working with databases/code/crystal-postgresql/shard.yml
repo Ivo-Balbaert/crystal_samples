@@ -1,0 +1,17 @@
+name: crystal-postgresql
+version: 0.1.0
+
+authors:
+  - Ivo-Balbaert <ivo.balbaert@telenet.be>
+
+targets:
+  crystal-postgresql:
+    main: src/crystal-postgresql.cr
+
+crystal: 0.21.0
+
+license: MIT
+
+dependencies:
+  pg:
+    github: will/crystal-pg

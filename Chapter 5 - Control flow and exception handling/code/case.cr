@@ -70,3 +70,10 @@ when {String, Int32}
   # The type of value1 is known to be a String by the compiler,
   # and the type of value2 is known to be an Int32
 end
+
+s = "askn"
+case s
+when .size
+  2
+  p "ok"      # => ok
+end

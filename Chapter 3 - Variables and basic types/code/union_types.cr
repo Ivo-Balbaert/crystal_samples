@@ -25,6 +25,10 @@ p typeof(a)     # => (Int32 | Nil)
 p a.class     # => Int32
 p a    # => 42
 
+exp = rand(0..1) == 0 ? 'a' : true
+puts typeof(exp) #=> Char | Bool
+puts exp.class   #=> Char (or Bool, depending on the chosen random value)
+
 p a + 2 # => Error: undefined method '+' for Nil
 p a * 2 # => Error: undefined method '*' for Nil
 p a.not_nil! + 2  # => 44
@@ -32,6 +36,10 @@ p a.not_nil! + 2  # => 44
 # set the compile-time type
 a = 0.as(Int32|Nil|String)
 p typeof(a) # => Int32 | Nil | String
+
+# Create a type based on another object’s type:
+hash = {1 => 'a', 2 => 'b'}
+other_hash = typeof(hash).new #:: Hash(Int32, Char)
 
 # Virtual type = Union of classes and structs under the same hierarchy
 class Foo

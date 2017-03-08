@@ -1,0 +1,8 @@
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04#how-to-add-and-delete-columns-from-a-table
+
+	    sudo apt-get update
+   	    sudo apt-get install postgresql postgresql-contrib
+
+	sudo -i -u postgres
+	psql
+		createdb contacts

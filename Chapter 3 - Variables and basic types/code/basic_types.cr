@@ -98,8 +98,16 @@ p 32.to_f        # => 32.0
 p "3.14159".to_f # >= 3.14159
 
 p (5 - 2).abs # 3
-p rand        # 0.93596666693734609
-p rand(101)   # 96 - random number from 0 to 100
+p rand        # 0.93596666693734609 # 0 <= x < 1
+p rand(100)   # 96 - random number 0 <= x < 100
+
+r = Random.new(42)  # seed 42
+puts r.rand   # => 0.54609542433313152
+puts r.rand   # => 0.22202384068989947
+
+y = Random.new(42)
+puts y.rand  # => 0.54609542433313152
+puts y.rand  # => 0.22202384068989947
 
 # Math constants and functions
 p typeof(Math) # => Class

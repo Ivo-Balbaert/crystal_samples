@@ -20,7 +20,9 @@ p typeof(str)  # => Int32
 a : String
 # puts a # => read before assignment to local variable 'a'
 a = "Hi there"
+# can be combined: a : String = "Hi there"
 puts a # => Hi there
+# a = 3  # => Error: type must be String, not (Int32 | String)
 
 # puts 42 + "Crystal" # => no overload matches 'Int32#+' with type String
 

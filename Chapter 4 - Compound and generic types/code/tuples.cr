@@ -7,6 +7,10 @@ tuple[2]                  #=> 'x'     (Char)
 # Empty tuple
 empty = Tuple.new
 
+# Creating a tuple with new
+a = Tuple.new(1, "hello", 'x')
+puts a # => {1, "hello", 'x'}
+
 # Acces tuple's value by its index
 tuple = {:key1, :key2}
 tuple[1] #=> :key2
@@ -40,6 +44,18 @@ puts nums.size #=> 3
 nums.each do |value|
   puts value
 end
+
+b = a.clone
+puts b # => {1, "hello", 'x'}
+
+tpl = {"peach", "apple", "pear", "plum"}
+
+puts tpl.index("pear")    # => 2
+puts tpl.includes?("grape")  # => false
+puts tpl.any? { |v| v.starts_with? "p" }  # => true
+puts tpl.all? { |v| v.starts_with? "p" }  # => false
+puts tpl.select { |v| v.includes? "e" }  # => ["peach", "apple", "pear"]
+puts tpl.map { |v| v.upcase }  # => ["PEACH", "APPLE", "PEAR", "PLUM"]
 
 # Named tuple
 tuple = {name: "Crystal", year: 2011} # NamedTuple(name: String, year: Int32)
