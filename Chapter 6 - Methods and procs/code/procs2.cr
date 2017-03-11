@@ -122,4 +122,3 @@ a = %w[apple bat cat]
 a.map(&.upcase)       # => ["APPLE", "BAT" "CAT"]
 a.map(&.reverse.upcase) # => ["ELPPA", "TAB" "TAC"]
 a.map( &.split(//).sort.join ) # => ["aelpp", "abt" "act"]
-

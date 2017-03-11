@@ -10,7 +10,6 @@ t.object_id    #=> 4802208          : UInt64
 p s[1] # => e
 s[2] = "z"  # Error: undefined method '[]=' for String
 
-
 # to_s
 p 32.to_s      # => "32"
 p 3.14159.to_s # => "3.14159"
@@ -68,3 +67,7 @@ p {"a", "b"}.join("-") # => a-b
 p "foo".gsub("o", "0") # => f00
 p "foo".sub("o", "0")  # => f0o
 p "a-b-c-d-e".split("-") # => ["a", "b", "c", "d", "e"]
+
+"Hello World".each_char do |char|
+  puts char
+end

@@ -43,6 +43,11 @@ class Human
   def species
     @@species
   end
+
+  def finalize
+    # Invoked when Human is garbage-collected
+    puts "Bye bye from #{self}!"
+  end
 end
 
 
@@ -60,3 +65,8 @@ dwight.name #=> "Dwight K. Schrute"
 
 # Call the class method
 Human.say("Hi") #=> print Hi and returns nil
+
+# see finalize in working (but consumes the memory of your machine!)
+loop do
+  Human.new
+end

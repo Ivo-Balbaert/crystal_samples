@@ -191,11 +191,21 @@ method &.+(2)
 method &.[index]
 
 # examples:
+p [1, 2, 3].map { |n| n.to_s }  # => ["1", "2", "3"]
 p [1, 2, 3].map &.to_s # => ["1", "2", "3"]
+
+p [10, 20, 30].map { |n| n.modulo(3) }  # => [1, 2, 0]
 p [10, 20, 30].map &.modulo(3) #=> [1, 2, 0]
+
 p [1, 20, 300].map &.to_s.size #=> 1, 2, 3
 p [[1, -2], [-3, -4]].map(&.map(&.abs)) #=> [[1, 2], [3, 4]]
 p [1, 2, 3, 4].map &.**(2) #=> [1, 4, 9, 16]
+p [10, 20, 30].map &.**(3) # => [1000, 8000, 27000]
+
+my_array = ["123", "22", "1"]
+sorted = my_array.sort_by &.size
+puts sorted
+=> ["1", "22", "123"]
 
 # Break expression inside a block 
 def thrice

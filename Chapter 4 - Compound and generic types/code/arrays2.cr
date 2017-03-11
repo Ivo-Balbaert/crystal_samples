@@ -23,6 +23,7 @@ p languages.sort
 p languages     # original array is not sorted
 p languages.sort!
 p languages     # original array is changed
+puts [7,3,2,8].sort #=> [2, 3, 7, 8]
 
 # Enumerable#map and Enumerable#select:
 arr = [1, 2, 3]

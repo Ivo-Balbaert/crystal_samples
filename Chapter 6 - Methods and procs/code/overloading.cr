@@ -80,10 +80,16 @@ def foo(a, b)
   4
 end
 
+def foo(bar)
+  p "Blocks are good too."
+  yield
+end
+
 foo 3, 'c'      # => 1
 foo true, 'c'   # => 2
 foo :hi, 'c'    # => 3
 foo :hi, :c     # => 4
+foo(nil) { "block" } # => "Blocks are good too."
 
 # example 5
 class Increment
