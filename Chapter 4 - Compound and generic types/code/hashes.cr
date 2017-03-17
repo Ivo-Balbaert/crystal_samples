@@ -2,6 +2,13 @@
 {1 => 2, 3 => 4}     # class: Hash(Int32, Int32)
 {1 => 2, 'a' => 3}   # class: Hash(Int32 | Char, Int32)
 
+phones = {
+  "Ary" => "15512312312",
+  "Brian" => "1545645645",
+  "Juan" => "1578978978",
+}
+puts phones["Brian"] # => "1545645645"
+
 # creating an empty hash:
 # {}                   # syntax error
 {} of Int32 => Int32   # {} 

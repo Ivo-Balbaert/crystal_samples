@@ -65,6 +65,7 @@ p var1.ends_with? "st" # => true
 p var1.index("e") # => 1
 p {"a", "b"}.join("-") # => a-b
 p "foo".gsub("o", "0") # => f00
+p "hello world".gsub(/([aeiou])/, "*\\1*") # => "h*e*ll*o* w*o*rld"
 p "foo".sub("o", "0")  # => f0o
 p "a-b-c-d-e".split("-") # => ["a", "b", "c", "d", "e"]
 

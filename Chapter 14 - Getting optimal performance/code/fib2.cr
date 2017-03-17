@@ -1,10 +1,10 @@
 # example 2: (fib2.cr - is also valid Ruby code)
-def fibonacci(n)
+def fib(n)
   return n if n <= 1
-  fibonacci(n - 1) + fibonacci(n - 2)
+  fib(n - 1) + fib(n - 2)
 end
 
-puts fibonacci(40)
+puts fib(40)
 
 # ivo@ivo-SATELLITE-L50D-B:~/crystal$ time ruby fib2.cr
 

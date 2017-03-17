@@ -1,6 +1,17 @@
 # Class definition     
 class Person
+  property age
+  getter name
+
+  def initialize(@name : String, @age : Int32)
+  end
 end
+
+p = Person.new("Michael", 35)
+p.name #=> "Michael" : String
+p.age #=> 35 : Int32
+p.age += 1 #=> 36 : Int32
+p.name = "Other person" # undefined method 'name=' for Person
 
 # Define a class with the class keyword
 class Human

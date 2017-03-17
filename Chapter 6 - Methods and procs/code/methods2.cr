@@ -201,6 +201,12 @@ p [1, 20, 300].map &.to_s.size #=> 1, 2, 3
 p [[1, -2], [-3, -4]].map(&.map(&.abs)) #=> [[1, 2], [3, 4]]
 p [1, 2, 3, 4].map &.**(2) #=> [1, 4, 9, 16]
 p [10, 20, 30].map &.**(3) # => [1000, 8000, 27000]
+p (1..5).map(&.+(2)) #=> [3, 4, 5, 6, 7] : Array(Int32)
+
+a = %w[apple bat cat]
+a.map(&.upcase)       # => ["APPLE", "BAT" "CAT"]
+a.map(&.reverse.upcase) # => ["ELPPA", "TAB" "TAC"]
+a.map( &.split(//).sort.join ) # => ["aelpp", "abt" "act"]
 
 my_array = ["123", "22", "1"]
 sorted = my_array.sort_by &.size

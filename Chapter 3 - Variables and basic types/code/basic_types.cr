@@ -109,6 +109,13 @@ y = Random.new(42)
 puts y.rand  # => 0.54609542433313152
 puts y.rand  # => 0.22202384068989947
 
+# Generate a random float between 0 and max, or between a given float range
+puts rand(1.5) # => 0.0369659
+puts rand(1.5..2.5) # => 1.68439
+
+# Generate random integers of any type and any range, without overflow issues
+p rand(Int64::MIN..Int64::MAX) # => 4544345849288905241
+
 # Math constants and functions
 p typeof(Math) # => Class
 p Math::PI             # 3.1415926535897931

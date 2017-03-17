@@ -33,6 +33,19 @@ p a + 2 # => Error: undefined method '+' for Nil
 p a * 2 # => Error: undefined method '*' for Nil
 p a.not_nil! + 2  # => 44
 
+# Here Enumerable#find will either return a string or nil, 
+# which in Ruby would lead to a RuntimeError when no element was found 
+# and we try to call the upcase method on nil. 
+# However, the Crystal compiler here uses the union type (String | Nil) for found 
+# and will not compile this code since not all types in the union know how 
+# to respond to the upcase message. So to actually get this program 
+# to compile we need explicitly guard against the nil case 
+# as shown in the last line of the example.
+found = %w(foo bar).find { "foo" }
+p typeof(found) #=> (String | Nil)
+p found.upcase # undefined method 'upcase' for Nil (compile-time type is (String | Nil))
+p found.upcase if found #=> "FOO" : String
+
 # set the compile-time type
 a = 0.as(Int32|Nil|String)
 p typeof(a) # => Int32 | Nil | String

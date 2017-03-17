@@ -68,3 +68,12 @@ end
 
 paint Color::Red
 
+enum Suit
+  Spades
+  Diamonds
+  Clubs
+  Hearts
+end
+
+p Suit::Spades.value #=> 0
+

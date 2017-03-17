@@ -5,6 +5,9 @@ struct Point
   end
 end
 
+p = Point.new(5, 3)
+p p.class #=> Point : Class
+
 # The array's buffer will have 8 bytes dedicated to each Point
 ary = [] of Point
 

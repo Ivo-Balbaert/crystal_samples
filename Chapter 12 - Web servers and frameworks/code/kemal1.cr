@@ -1,3 +1,4 @@
+# has to be in a project that includes kemal as a shard
 require "kemal"
 
 # Matches GET "http://host:port/"

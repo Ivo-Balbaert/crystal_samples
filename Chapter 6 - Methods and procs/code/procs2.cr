@@ -118,7 +118,3 @@ x # : Int32 | String | Char
 f = ->(x : Int32) { puts x }
 10.times &f
 
-a = %w[apple bat cat]
-a.map(&.upcase)       # => ["APPLE", "BAT" "CAT"]
-a.map(&.reverse.upcase) # => ["ELPPA", "TAB" "TAC"]
-a.map( &.split(//).sort.join ) # => ["aelpp", "abt" "act"]

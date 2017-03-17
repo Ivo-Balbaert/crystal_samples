@@ -18,6 +18,7 @@ lib C   # should this be lib LibC ???
    fun printf(format : UInt8*, ...) : Int32
    fun cos(value : Float64) : Float64 # from C: double cos(double x)
    fun getch : Int32
+   fun rand : Int32
    fun srand(seed : UInt32)
    fun waitpid(pid : Int32, status_ptr : Int32*, options : Int32) : Int32
    fun exit(status : Int32) : NoReturn
@@ -56,6 +57,7 @@ puts "hello" # this will never be executed
 # C.cos(1.5) #=> 0.0707372 # Error: undefined reference to 'cos' ??? also with LibC
 # C.getch
 p C.srand(1_u32)  # => nil
+p rand  # => 16807
 
 # to_unsafe method
 class IntWrapper
