@@ -13,6 +13,7 @@ puts phones["Brian"] # => "1545645645"
 # {}                   # syntax error
 {} of Int32 => Int32   # {} 
 Hash(Int32, Int32).new # {}
+salaries = {} of String => Int32
 
 a = {} of String => Int32
 a["gs"] = 1905

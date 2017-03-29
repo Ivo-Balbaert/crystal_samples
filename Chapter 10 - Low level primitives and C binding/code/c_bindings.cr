@@ -14,9 +14,9 @@ end
     # (only useful in Mac OS X).
 
 # A fun declaration
-lib C   # should this be lib LibC ???
+# To call mathetmatical functions,see c_math.cr:
+lib LibC   
    fun printf(format : UInt8*, ...) : Int32
-   fun cos(value : Float64) : Float64 # from C: double cos(double x)
    fun getch : Int32
    fun rand : Int32
    fun srand(seed : UInt32)
@@ -47,16 +47,15 @@ end
 
 sleep(1_u32) # sleep has type UInt32
 
-C.exit(1)    # this is NoReturn
+LibC.exit(1)    # this is NoReturn
 puts "hello" # this will never be executed
 # pid = ...
 # options = ...
-# C.waitpid(pid, out status_ptr, options)
+# LibC.waitpid(pid, out status_ptr, options)
 
 # use as if it was a class method:
-# C.cos(1.5) #=> 0.0707372 # Error: undefined reference to 'cos' ??? also with LibC
-# C.getch
-p C.srand(1_u32)  # => nil
+# LibC.getch
+p LibC.srand(1_u32)  # => nil
 p rand  # => 16807
 
 # to_unsafe method
@@ -70,16 +69,16 @@ class IntWrapper
 end
 
 wrapper = IntWrapper.new(1)
-C.exit(wrapper) # wrapper is not an Int32, but its to_unsafe
+LibC.exit(wrapper) # wrapper is not an Int32, but its to_unsafe
                 # method is, so wrapper.to_unsafe
                 # is passed instead
 
 
 a = 1
 b = 2
-C.printf "%d + %d = %d\n", a, b, a + b  # => 1 + 2 = 3
+LibC.printf "%d + %d = %d\n", a, b, a + b  # => 1 + 2 = 3
 
-tz = C::TimeZone.new
+tz = LibC::TimeZone.new
 tz.minutes_west = 1
 tz.minutes_west #=> 1
 
@@ -90,9 +89,9 @@ value.some_float #=> 4.94066e-324
 
 X::SomeEnum::One #=> One
 
-C.errno #=> some value
-C.errno = 0
-C.errno #=> 0
+LibC.errno #=> some value
+LibC.errno = 0
+LibC.errno #=> 0
 
 ########################################################
 lib X

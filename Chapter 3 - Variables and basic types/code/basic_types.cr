@@ -18,6 +18,7 @@ a = nil
 b = "London"
 p a && b # => nil
 p a || b # => "London"
+p foo = ENV["FOO"]? || 10   # => 10  # if ENV["FOO"] does not exist (is nil)
 
 result = value.as?(Int32) || 10  # if value is not an Int32, result is 10
 

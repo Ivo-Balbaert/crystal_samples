@@ -7,6 +7,7 @@ languages = ["English", "Norwegian", "Ruby"]
 # []               # Syntax error: for empty arrays use '[] of ElementType'
 [] of Int32      #=> [] : Array(Int32)
 Array(Int32).new #=> [] : Array(Int32)
+genders = [] of String
 
 # Add to an array
 array << 6  #=> [1, 2, 3, 4, 5, 6]

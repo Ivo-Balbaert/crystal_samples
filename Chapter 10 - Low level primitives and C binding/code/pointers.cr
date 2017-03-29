@@ -1,6 +1,7 @@
 ptr = Pointer(UInt8).malloc(20)
 ptr.value = 10_u8
 puts ptr # => Pointer(UInt8)@0x109303e00
+puts ptr.value # => 10
 
 ptr = Pointer(Int32).malloc(1)
 p ptr.class # => Pointer(Int32)
@@ -19,7 +20,7 @@ array2.same?(array) #=> true
 
 # unsafe code
 a = 1
-ptr = pointerof(a)
-ptr.value = 2
+ptr_a = pointerof(a)
+ptr_a.value = 2
 puts a # => 2
 ptr[100_000] = 2   # undefined behaviour, probably a segmentation fault

@@ -50,6 +50,20 @@ rescue  # catch any kind of exception
 end
 p ex #=> "ex2"
 
+# Concrete example:
+begin
+  raw_file = File.read(path)
+  map = JSON.parse(raw_file)
+  File.write(path, "ok")
+  :ok
+rescue Enoent
+  raise "Could not read file"
+rescue JSON::ParseException
+  raise "Could not parse file"
+rescue ex
+  raise "Other error"
+end
+
 # Ensure clause
 # Will print "Cleanup..." after invoking something_dangerous,
 # regardless of whether it raised or not

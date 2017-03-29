@@ -10,10 +10,12 @@ p typeof(1)  # => Int32
 
 str = "It's a beautiful day"
 puts str # => It's a beautiful day
+p str.size # => 20
 p typeof(str)  # => String
 
 str = 42
 puts str # => 42
+p str.abs # => 42
 p typeof(str)  # => Int32
 
 # puts a # => Error: undefined local variable or method 'a'

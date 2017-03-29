@@ -33,6 +33,16 @@ p a + 2 # => Error: undefined method '+' for Nil
 p a * 2 # => Error: undefined method '*' for Nil
 p a.not_nil! + 2  # => 44
 
+###
+def foo(a)
+  if a >= 0
+    a
+  else
+    nil
+  end
+end
+foo(rand()) + 1 # => undefined method '+' for Nil (compile-time type is (Float64 | Nil))
+
 # Here Enumerable#find will either return a string or nil, 
 # which in Ruby would lead to a RuntimeError when no element was found 
 # and we try to call the upcase method on nil. 
@@ -86,3 +96,13 @@ t2 = {y: true, x: nil} # Tuple(y: Bool, x: Nil)
 
 t3 = rand < 0.5 ? t1 : t2
 typeof(t3) # NamedTuple(x: Int32 | Nil, y: String | Bool)
+
+def shout(x)
+  # Notice that both Int32 and String respond_to `to_s`
+  x.to_s.upcase
+end
+
+foo = ENV["FOO"]? || 10
+
+typeof(foo) # => (Int32 | String)
+typeof(shout(foo)) # => String

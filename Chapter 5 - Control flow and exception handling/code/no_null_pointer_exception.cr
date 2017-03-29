@@ -36,3 +36,51 @@ if line
 else
   puts "Nothing in the socket"
 end
+
+# example 3:
+if rand(2) > 0
+  my_string = "hello world"
+end
+
+# puts my_string.upcase
+# Error in hello_world.cr:5: undefined method 'upcase' for Nil (compile-time type is (String | Nil))
+
+# puts my_string.upcase
+#                ^~~~~~
+# Solution:
+if my_string
+  puts my_string.upcase
+end
+
+# example 4:
+x = rand < 0.5 ? 1 : nil
+if x
+  puts x + 1
+else
+  puts "no x"
+end
+
+# alternative:
+x = rand < 0.5 ? 1 : nil
+if x.nil?
+  puts "no x"
+else
+  puts x + 1
+end
+
+# 2nd alternative:
+x = rand < 0.5 ? 1 : nil
+if x.is_a?(Number)
+  puts x + 1
+else
+  puts "no x"
+end
+
+# 3rd alternative:
+x = rand < 0.5 ? 1 : nil
+case x
+when Number
+  puts x + 1
+else
+  puts "no x"
+end

@@ -73,3 +73,15 @@ end
 
 Bar.hello # => "Bar"
 Something.hello # => "HELLO"
+
+
+# Example of finished:
+class Abc
+  macro finished
+    def self.hi
+      puts "Hello"
+    end
+  end
+end
+
+Abc.hi # => Hello. 

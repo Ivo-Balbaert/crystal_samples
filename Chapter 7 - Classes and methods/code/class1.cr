@@ -7,6 +7,15 @@ class Person
   end
 end
 
+# alternative: type of instance variable derived from default value
+# class Person
+#   property age = 32
+#   getter name = "John"
+
+#   def initialize(@name, @age)
+#   end
+# end
+
 p = Person.new("Michael", 35)
 p.name #=> "Michael" : String
 p.age #=> 35 : Int32
