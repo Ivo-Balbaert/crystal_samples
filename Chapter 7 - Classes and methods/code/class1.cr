@@ -1,3 +1,28 @@
+class Foo
+  getter :value
+
+  def initialize(@value); end
+end
+
+foo = Foo.new(1)
+p foo.value.abs  # => 1
+
+foo = Foo.new('a')
+p foo.value.ord  # => Error: undefined method 'abs' for Char
+
+# fix: use generic types
+class Foo(T)
+  getter :value
+
+  def initialize(@value : T); end
+end
+
+foo = Foo.new(1)
+p foo.value.abs  # => 1
+
+foo = Foo.new('a')
+p foo.value.ord  # => 97
+
 # Class definition     
 class Person
   property age

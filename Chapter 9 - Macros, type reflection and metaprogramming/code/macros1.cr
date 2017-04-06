@@ -209,3 +209,8 @@ macro compile_time_date
 end
 
 p compile_time_date  # => "Tue Feb 28 11:16:39 CET 2017\n"
+p `date`  # ??? test
+
+p compile_time_date  # => "Tue Feb 28 11:16:39 CET 2017\n"
+p `date`  # ??? test
+

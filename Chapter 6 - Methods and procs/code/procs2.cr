@@ -118,3 +118,26 @@ x # : Int32 | String | Char
 f = ->(x : Int32) { puts x }
 10.times &f
 
+def new_counter
+  a = 0
+  ->{ a +=1; a}
+end
+
+counter = new_counter
+counter.call    # =>  1
+counter.call    # =>  2
+
+counter2 = new_counter
+counter.call    # =>  1
+
+# Captured block
+def capture(&block : Int32 -> Int32)
+  block
+end
+
+a = 10
+proc = capture {|x| x + a}
+proc.call(1)  # => 11
+
+a = 20
+proc.call(1)  # => 21

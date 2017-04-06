@@ -32,3 +32,6 @@ It’ll create database_name.db in the folder you’ve given the command.
 sqlite&gt; .databases
 
 TOOL:  install Sqliteman
+
+Install chinook example database
+http://www.sqlitetutorial.net/sqlite-sample-database/

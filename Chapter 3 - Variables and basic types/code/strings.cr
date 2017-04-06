@@ -10,6 +10,13 @@ t.object_id    #=> 4802208          : UInt64
 p s[1] # => e
 s[2] = "z"  # Error: undefined method '[]=' for String
 
+# take substring as a range from a string
+s[1..3] #=> "ell"
+# take substring defined with start and length
+s[2, 5] #=> "llo, "
+# take substring with a regular expression
+s[/e../] #=> "ell"
+
 # to_s
 p 32.to_s      # => "32"
 p 3.14159.to_s # => "3.14159"

@@ -9,8 +9,15 @@ languages = ["English", "Norwegian", "Ruby"]
 Array(Int32).new #=> [] : Array(Int32)
 genders = [] of String
 
-# Add to an array
-array << 6  #=> [1, 2, 3, 4, 5, 6]
+# Static typing: error and solutions
+numbers = [1, 2]
+numbers << 3
+numbers << "Crystal"  # => Error: no overload matches 'Array(Int32)#<<' with types String
+puts numbers.class
+# Solution 1
+numbers = [1, 2, "hello"]
+# Solution 2
+numbers = [1, 2] of (String | Int32)
 
 # Initialize an array with 6 elements equal to 0
 b = Array(Int32).new(6, 0)
@@ -38,6 +45,9 @@ p array[2, 3] #=> [3, 4, 5]
 p array[1..3] #=> [2, 3, 4]
 
 # Methods:
+
+# Add to an array
+array << 6  #=> [1, 2, 3, 4, 5, 6]
 p languages.size       # 3
 p languages.to_s       # "[\"English\", \"Norwegian\", \"Ruby\"]"
 p languages.join(" ,") # "English ,Norwegian ,Ruby"
@@ -55,6 +65,12 @@ p array.includes? 3 #=> true
 
 # Nested arrays
 nest = [1, ["b", [:c, ['d']]]]
+
+# Destructuring an array
+one, two, three = [1,2,3]
+one   #=> 1
+two   #=> 2
+three #=> 3
 
 # Array-like types
 MyArrayType{1, 2, 3}

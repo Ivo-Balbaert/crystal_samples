@@ -60,3 +60,11 @@ h1 = {} of String | Int32 => Bool | String
 h1["hello"] = true
 h1["world"] = false
 h1["42"] = "error?"  # =>  ok!
+
+# Nested hashes
+cats = {
+  :Ferguson => {
+    :weight => "fat"
+  }
+}
+cats[:Ferguson][:weight] #=> "fat" : String

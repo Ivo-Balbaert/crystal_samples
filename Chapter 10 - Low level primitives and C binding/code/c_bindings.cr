@@ -24,6 +24,7 @@ lib LibC
    fun exit(status : Int32) : NoReturn
    fun memcmp(p1 : Void*, p2 : Void*, size : C::SizeT) : Int32
    fun sleep(seconds : UInt32) : UInt32
+   fun atoi(str: UInt8*) : Int32
 # declares a C struct
    struct TimeZone
     minutes_west : Int32
@@ -45,7 +46,8 @@ lib LibC
    $errno : Int32
 end
 
-sleep(1_u32) # sleep has type UInt32
+LibC.sleep(1_u32) # sleep has type UInt32
+p LibC.atoi("28").class # => Int32
 
 LibC.exit(1)    # this is NoReturn
 puts "hello" # this will never be executed

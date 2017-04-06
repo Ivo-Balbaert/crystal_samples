@@ -41,6 +41,51 @@ puts value # => 2
 # Before second send
 # 2
 
+# example 2B:  main receives on channel, 1 fiber sends to channel 
+# main sends on channel, a fiber receives from the channel
+# make sure a value is received before it is sent!
+ch = Channel(Int32).new
+
+# (1..10).each { |i| ch.send i }   # main blocks, because value is not received
+
+# fiber 1:
+spawn do
+  loop do
+    num = ch.receive
+    puts "Got number #{num}"
+  end
+end
+
+# main:
+(1..10).each { |i| ch.send i }
+
+# Output:
+# Got number 1
+# Got number 2
+# Got number 3
+# Got number 4
+# Got number 5
+# Got number 6
+# Got number 7
+# Got number 8
+# Got number 9
+# Got number 10
+
+# exercise: reverse the action: fiber sends / main receives  # => same output
+ch = Channel(Int32).new
+
+# fiber 1:
+spawn do
+  (1..10).each { |i| ch.send i }
+end
+
+# main:
+loop do
+    num = ch.receive
+    puts "Got number #{num}"
+  end
+end
+
 # example 3: waiting for I/O
 require "socket"
 channel = Channel(String).new
@@ -113,6 +158,7 @@ Output:
 # With a buffered channel, invoking send won't switch to another fiber unless 
 # the buffer is full:
 # A buffered channel of capacity 2
+# first, same example but unbuffered
 channel = Channel(Int32).new(2)
 
 spawn do

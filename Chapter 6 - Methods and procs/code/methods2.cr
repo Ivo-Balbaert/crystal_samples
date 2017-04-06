@@ -8,8 +8,8 @@ p dinner    #=> "quesadilla"
 
 # same with tuple  {"pancake", "sandwich", "quesadilla"}
 
-# Splat operator ("*") 
-# Pass a list of arguments, which will be converted into a tuple
+# Splat operator ("*") = reverse of destructuring
+# Pass a list of arguments, which will be converted into a tuple or array(???)
 def guests(*tuple)
   tuple.each { |guest| puts guest }
 end
@@ -44,6 +44,18 @@ end
 
 sum 1, 2, 3 # => 6
 sum 1, 2, 3, initial: 10 # => 16
+
+def join(*args, with joiner)
+  String.build do |str|
+    args.each_with_index do |arg, index|
+      str << joiner if index > 0
+      str << arg
+    end
+  end
+end
+
+join 1, 2, 3 with: "-"          # =>  "1-2-3"
+join 1, 2, 3, 4, 5 with: "~"    # =>  "1~2~3~4~5"
 
 # Splatting a tuple
 def foo(x, y)

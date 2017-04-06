@@ -38,3 +38,8 @@ if value
 else
   puts "No number at index 4"
 end
+
+# Chaining methods:
+(1..5).to_a
+.sort {|a, b| b<=>a}
+.reject {|a| a.even?}  # => [5, 3, 1]

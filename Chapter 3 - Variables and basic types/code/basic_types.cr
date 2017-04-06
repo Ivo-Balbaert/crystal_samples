@@ -28,6 +28,17 @@ local ||= 1 # same as: local || (local = 1)
 # if local is true, it is set to 1
 local &&= 1 # same as: local && (local = 1)
 
+# memoization
+class Foo
+    def a(i)
+        @memo ||= i * i
+    end
+end
+foo = Foo.new
+foo.a(5)  # => 25
+foo.a(2)  # => 25
+
+
 
 # integers
 p 42.class  #=> Int32

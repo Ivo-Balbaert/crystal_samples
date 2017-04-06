@@ -15,6 +15,7 @@ puts a # => {1, "hello", 'x'}
 tuple = {:key1, :key2}
 tuple[1] #=> :key2
 # tuple[2] #=> syntax error : Index out of bound
+tuple[2]? #=> nil
 
 # Can be expanded (decomposed) into multiple variables
 a, b, c = {:a, 'b', "c"}
