@@ -30,6 +30,9 @@ string_box = MyBox.new("crystal")
 another_box = MyBox(String).new(1) # Error, Int32 doesn't match String
 
 # example 3
+# first do this example without (T) --> compile error in Crystal, works in Ruby (duck typing)
+# solution: @value : Int32   or @value : Int32 | Char ???
+# better solution: generic type T
 class Foo(T)
   getter :value
 

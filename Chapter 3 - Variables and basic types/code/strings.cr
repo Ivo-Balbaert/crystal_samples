@@ -2,7 +2,7 @@
 "s".class #=> String
 ""  # empty string  
 
-# Strings are immutable
+# Strings are immutable: object_ids are same!
 s = "hello, "  #=> "hello, "        : String
 s.object_id    #=> 4802176          : UInt64
 t = "hello, "  #=> "hello, "        : String

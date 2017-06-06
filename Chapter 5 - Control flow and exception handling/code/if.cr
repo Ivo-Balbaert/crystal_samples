@@ -5,6 +5,7 @@
 # else
 #   do_that
 # end
+# no elsif example
 
 a = 1
 if a > 0

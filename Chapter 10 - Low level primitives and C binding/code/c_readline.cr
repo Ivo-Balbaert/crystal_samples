@@ -4,4 +4,4 @@ lib LibReadline
 end
 
 line = LibReadline.readline("What's your name?\n")
-p String.new(line)
+p String.new(line) 

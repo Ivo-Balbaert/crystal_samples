@@ -107,5 +107,12 @@ foo = ENV["FOO"]? || 10
 typeof(foo) # => (Int32 | String)
 typeof(shout(foo)) # => String
 
-
+numbers = [1, 2] of (String | Int32)
+numbers << 3
+numbers << "Crystal"
+# puts numbers.last.size # compiler error
+last_elem = numbers.last
+if last_elem.is_a?(String)
+  puts last_elem.size # => 7
+end
 

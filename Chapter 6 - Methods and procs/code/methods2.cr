@@ -54,8 +54,8 @@ def join(*args, with joiner)
   end
 end
 
-join 1, 2, 3 with: "-"          # =>  "1-2-3"
-join 1, 2, 3, 4, 5 with: "~"    # =>  "1~2~3~4~5"
+join 1, 2, 3, with: "-"          # =>  "1-2-3"
+join 1, 2, 3, 4, 5, with: "~"    # =>  "1~2~3~4~5"
 
 # Splatting a tuple
 def foo(x, y)
@@ -177,7 +177,7 @@ end
 # => 3
 
 # Error specifying more block arguments than those yielded:
-# too many block arguments (given 1, expected macimum 0)
+# too many block arguments (given 1, expected maximum 0)
 # def guests
 #   yield
 #   yield

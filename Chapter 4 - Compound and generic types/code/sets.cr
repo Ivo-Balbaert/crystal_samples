@@ -1,5 +1,5 @@
 # Set literal
-p set = Set{1, 2, 3} #=> [1, 2, 3]
+p set = Set{1, 2, 3} #=> Set{1, 2, 3}
 p set.class          #=> Set(Int32)
 
 # The above is equivalent to

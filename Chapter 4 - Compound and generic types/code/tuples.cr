@@ -1,8 +1,8 @@
 tpl = {1, "hello", 'x'}
 p tpl.class #=> Tuple(Int32, String, Char)
-tuple[0]                  #=> 1       (Int32)
-tuple[1]                  #=> "hello" (String)
-tuple[2]                  #=> 'x'     (Char)
+tpl[0]                  #=> 1       (Int32)
+tpl[1]                  #=> "hello" (String)
+tpl[2]                  #=> 'x'     (Char)
 
 # Empty tuple
 empty = Tuple.new
@@ -59,9 +59,9 @@ puts tpl.select { |v| v.includes? "e" }  # => ["peach", "apple", "pear"]
 puts tpl.map { |v| v.upcase }  # => ["PEACH", "APPLE", "PEAR", "PLUM"]
 
 # Named tuple
-tuple = {name: "Crystal", year: 2011} # NamedTuple(name: String, year: Int32)
-tuple[:name] # => "Crystal" (String)
-tuple[:year] # => 2011      (Int32)
+ntuple = {name: "Crystal", year: 2011} # NamedTuple(name: String, year: Int32)
+ntuple[:name] # => "Crystal" (String)
+ntuple[:year] # => 2011      (Int32)
 
 # Shorter syntax
 # An array of named tuples of x: Int32, y: String
